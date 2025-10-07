@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ngan Huynh | About</title>
+  <link rel="icon" href="./images/dev-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-Montserrat leading-8 dark:bg-darkTheme dark:text-white">
+  <!-- Background -->
+  <div class="fixed right-0 w-11/12 -z-10 translate-y-[-80%]">
+    <img src="./images/header-bg-color.png" alt="" class="w-full">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+    <img src="./images/logo.png" alt="logo" class="w-1/3s cursor-pointer mr-14 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-1/3s cursor-pointer mr-14 hidden dark:block">
+
+    <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About me</a></li>
+      <li><a href="work.html" class="nav-link">Work</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <div class="w-full px-[12%] pt-40 pb-16">
+    <h2 class="text-center text-5xl font-bold mb-10">About me</h2>
+
+    <!-- Wrap content to stay centered and even -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Text -->
+      <div class="space-y-4 text-left md:text-justify leading-relaxed">
+        <p>
+          I hold an Associate’s Degree in Information Technology and began my career as a Data Analyst at Shinhan Finance Vietnam, where I gained two years of experience in data analytics.
+        </p>
+        <p>
+          Currently, I am a senior Computer Science student at New Jersey City University and work as an AI/ML Research Assistant, where I train and test models to make predictions.
+        </p>
+        <p>
+          I have hands-on experience with Python, SQL, and data visualization tools, and I am passionate about leveraging technology to uncover insights, optimize processes, and deliver impactful, data-driven solutions.
+        </p>
+
+        <!-- Info boxes -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <li class="border border-gray-300 rounded-xl p-4 dark:border-white/40">
+            <h3 class="my-2 font-semibold text-gray-800 dark:text-white text-center">Skills</h3>
+            <p class="text-gray-600 text-sm dark:text-gray-200 md:text-justify">
+              <b>Programming Languages:</b> Python (Pandas, Numpy, MatplotLib, Scikit-learn)
+              <br><b>Databases:</b> PostgreSQL
+              <br><b>BI & Visualization Tools:</b> Tableau, MS Excel (Pivot Table, VLOOKUP, XLOOKUP, Conditional Formatting)
+            </p>
+          </li>
+          <li class="border border-gray-300 rounded-xl p-6 dark:border-white/40">
+            <h3 class="my-2 font-semibold text-gray-800 dark:text-white text-center">Education</h3>
+            <p class="text-gray-600 text-sm dark:text-gray-200">
+              <b>BS</b> in Computer Science<br><b>AS</b> in Information Technology
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Image (keeps aspect ratio, no distortion) -->
+      <div class="flex justify-center lg:justify-end">
+        <img
+          src="./images/user-image.jpg"
+          alt="Ngan Huynh"
+          class="w-72 sm:w-80 lg:w-96 aspect-[4/5] object-cover rounded-3xl shadow-md"
+        />
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <section class="mt-16">
+      <h3 class="text-2xl font-bold mb-8 text-center">Timeline</h3>
+      <div class="max-w-6xl mx-auto relative border-l border-gray-300 dark:border-gray-600 pl-6">
+        <div class="mb-10">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Sep 2020 – Dec 2022</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Broward College Vietnam</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Associate’s Degree in Information Technology</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Jun 2022 – Aug 2022</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Shinhan Finance Vietnam</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Data Analyst Intern</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Mar 2023 – Jun 2024</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Shinhan Finance Vietnam</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Data Analyst</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Sep 2024 – May 2026</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">New Jersey City University</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">BS in Computer Science</p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Jun 2025 – Aug 2025</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">NJCU | Summer Research Intern</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Researched AI/ML applications in property price prediction</p>
+        </div>
+
+        <div>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Sep 2025 – Present</p>
+          <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Undergraduate AI/ML Research Assistant</h4>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">Training and evaluating ML models for research</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center border-t border-gray-300 mx-[10%] py-10">
+    <img src="./images/logo.png" alt="logo" class="w-36 mx-auto mb-2 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-36 mx-auto mb-2 hidden dark:block">
+    <a href="mailto:krishuynh2222@gmail.com" class="block text-sm mb-2 hover:underline">krishuynh2222@gmail.com</a>
+    <p>© 2025 by Ngan Huynh</p>
+  </footer>
+</body>
+</html>

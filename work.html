@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngan Huynh | WORK</title>
+  <link rel="icon" href="./images/dev-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-Montserrat leading-8 dark:bg-darkTheme dark:text-white">
+  <!-- Background -->
+  <div class="fixed right-0 w-11/12 -z-10 translate-y-[-80%]">
+    <img src="./images/header-bg-color.png" alt="" class="w-full">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+    <img src="./images/logo.png" alt="logo" class="w-1/3s cursor-pointer mr-14 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-1/3s cursor-pointer mr-14 hidden dark:block">
+
+    <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About me</a></li>
+      <li><a href="work.html" class="nav-link">Work</a></li>
+    </ul>
+  </nav>
+
+<!-- Portfolio Section -->
+<div class="w-full px-[12%] pt-40 pb-16">
+  <h2 class="text-center text-5xl font-bold mb-10">Portfolio</h2>
+  <p class="text-center text-gray-600 dark:text-gray-300 mt-3">
+    Selected projects showcasing my work in data analytics, visualization, and AI/ML
+  </p>
+
+  <!-- Grid Layout -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 justify-items-center items-stretch">
+
+    <!-- Project Card -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/predicthousingprice.png" alt="Predict housing price" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">
+            Best Model to Predict Housing Price with Machine Learning | Summer AI/ML Research Intern
+          </h2>
+          <p class="text-sm text-gray-700">Tools: Python, scikit-learn</p>
+          <p class="text-sm text-gray-700">Models: Linear Regression, Decision Tree with pruning</p>
+          <p class="text-sm text-gray-700 mt-3">
+            Predicting housing prices using Linear Regression and Decision Tree with pruning.
+            Compared model performance to identify the most accurate and generalizable approach (~58% test accuracy).
+          </p>
+        </div>
+        <a href="https://github.com/krishuynh2222/Predicting_Housing_Prices_with_Machine_Learning"
+           target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/fairprice.png" alt="FairPrice" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Fair Price Grocery Analysis</h2>
+          <p class="text-sm text-gray-700">Tools: SQL, Python, Tableau</p>
+          <p class="text-sm text-gray-700 mt-3">
+            Tableau dashboard analyzing FairPrice grocery sales, customer ratings, and outlet performance.
+            Reveals insights on top categories, outlet tiers, and sales trends with actionable recommendations.
+          </p>
+        </div>
+        <a href="https://github.com/krishuynh2222/fairprice-grocery-analytics"
+           target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/datawarehouse.png" alt="Data Warehouse" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Data Warehouse Project</h2>
+          <p class="text-sm text-gray-700">Tools: Excel, SQL</p>
+          <p class="text-sm text-gray-700 mt-3">
+            Built a PostgreSQL-based data warehouse with ETL processes, data modeling, and analytical queries for business reporting.
+          </p>
+        </div>
+        <a href="https://github.com/krishuynh2222/sql-data-warehouse-project"
+           target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/staple.png" alt="Staples Sales Dashboard" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Staples Sales Dashboard Reporting</h2>
+          <p class="text-sm text-gray-700">Tools: Excel</p>
+          <p class="text-sm text-gray-700 mt-3">
+            Interactive Excel dashboard analyzing Staples’ sales (2021–2024) using PivotTables, Charts, and VLOOKUP.
+            Highlights key revenue and performance insights across regions.
+          </p>
+        </div>
+        <a href="https://github.com/krishuynh2222/staples-sales-dashboard-reporting"
+           target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/loan.png" alt="Loan Performance" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Loan Performance Analysis</h2>
+          <p class="text-sm text-gray-700">Tools: SQL, Tableau</p>
+          <p class="text-sm text-gray-700 mt-3">
+            Loan disbursement performance analysis using SQL for data cleaning and Tableau for visualization and business insights.
+          </p>
+        </div>
+        <a href="https://github.com/krishuynh2222/finance_loan_report"
+           target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
+      <img src="./images/ai.jpg" alt="Predict On-time Shipment" class="w-full h-[200px] object-cover">
+      <div class="p-5 flex flex-col justify-between h-full">
+        <div>
+          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Best Model to Predict On-time Shipment with Machine Learning</h2>
+          <p class="text-sm text-gray-700">Tools: Python, scikit-learn</p>
+          <p class="text-sm text-gray-700">Models: Logistic Regression, SVM, K-Means Clustering</p>
+          <p class="text-sm text-gray-700 mt-3">
+            COMING SOON — focuses on identifying key delivery factors and selecting the most accurate predictive model.
+          </p>
+        </div>
+        <a href="#" target="_blank"
+           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Show more -->
+  <a href="https://github.com/krishuynh2222?tab=repositories"
+     class="w-max flex items-center justify-center border-[0.5px] rounded-full border-gray-700 py-3 px-10 gap-2 text-gray-700 my-20 mx-auto cursor-pointer hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-[#2a004a]">
+    Show more
+    <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+    <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
+  </a>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="text-center border-t border-gray-300 mx-[10%] py-10">
+    <img src="./images/logo.png" alt="logo" class="w-36 mx-auto mb-2 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-36 mx-auto mb-2 hidden dark:block">
+    <a href="mailto:krishuynh2222@gmail.com" class="block text-sm mb-2 hover:underline">krishuynh2222@gmail.com</a>
+    <p>© 2025 by Ngan Huynh</p>
+  </footer>
+</body>
+</html>

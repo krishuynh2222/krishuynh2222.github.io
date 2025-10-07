@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngan Huynh | Home</title>
+  <link rel="icon" href="./images/dev-icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="overflow-x-hidden font-Montserrat leading-8 dark:bg-darkTheme dark:text-white">
+
+  <!-- Background -->
+  <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+    <img src="./images/header-bg-color.png" alt="" class="w-full">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+    <img src="./images/logo.png" alt="logo" class="w-1/3s cursor-pointer mr-14 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-1/3s cursor-pointer mr-14 hidden dark:block">
+
+    <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About me</a></li>
+      <li><a href="work.html" class="nav-link">Work</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <img src="./images/profile_img.jpg" alt="profile" class="rounded-full w-32">
+
+    <h1 class="flex items-end text-3xl gap-2 sm:text-6xl lg:text-[66px] font-Montserrat">
+      Hello! I am <span class="font-bold">Ngan Huynh</span>
+    </h1>
+
+    <p class="max-w-2xl text-xl mx-auto font-Ovo">
+      I bridge the gap between data and business impact by applying machine learning models to uncover insights and optimize decision-making.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+      <a href="./images/NganHuynh_Resume.pdf" download class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 text-black bg-white hover:bg-gray-100 dark:text-black">
+        my resume <img src="./images/download-icon.png" alt="" class="w-4">
+      </a>
+    </div>
+
+    <br>
+
+    <ul class="flex items-center gap-3 sm:gap-5 ">
+      <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500 dark:border-white">
+        <a href="https://www.linkedin.com/in/krishuynh2222/"><img src="./images/linkedin.png" alt="" class="w-5 sm:w-7"></a>
+      </li>
+      <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500 dark:border-white">
+        <a href="krishuynh2222.com"><img src="./images/gmailogo.png" alt="" class="w-5 sm:w-7"></a>
+      </li>
+      <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500 dark:border-white">
+        <a href="https://github.com/krishuynh2222"><img src="./images/github.svg" alt="" class="w-5 sm:w-7"></a>
+      </li>
+      <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500 dark:border-white">
+        <a href="https://public.tableau.com/app/profile/ngan.huynh2792/vizzes"><img src="./images/Tableaulogo.png" alt="" class="w-5 sm:w-7"></a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="mt-20 text-center border-t border-gray-400 mx-[10%] py-10">
+    <img src="./images/logo.png" alt="logo" class="w-36 mx-auto mb-2 dark:hidden">
+    <img src="./images/logo_dark.png" alt="logo" class="w-36 mx-auto mb-2 hidden dark:block">
+    <a href="mailto:krishuynh2222@gmail.com" class="block text-sm mb-2">krishuynh2222@gmail.com</a>
+    <p>© 2025 by Ngan Huynh</p>
+  </div>
+</body>
+</html>
