@@ -11,79 +11,80 @@
 </head>
 
 <body class="font-Montserrat leading-8 dark:bg-darkTheme dark:text-white">
+
   <!-- Background -->
-  <div class="fixed right-0 w-11/12 -z-10 translate-y-[-80%]">
+  <div class="fixed right-0 w-11/12 -z-10 -translate-y-1/2">
     <img src="./images/header-bg-color.png" alt="" class="w-full">
   </div>
 
-<!-- ✅ Responsive Navigation -->
-<nav id="navbar" class="w-full fixed top-0 left-0 z-50 bg-white/70 backdrop-blur-md dark:bg-darkTheme/80 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-5 lg:px-10 flex justify-between items-center h-16">
-    
-    <!-- Logo -->
-     <a href="index.html" class="flex items-center">
-      <img src="./images/logoKrisHuynh.png" alt="logo" class="h-16 dark:hidden">
-    </a>
+  <!-- Navbar -->
+  <nav id="navbar" class="w-full fixed top-0 left-0 z-50 bg-white/70 backdrop-blur-md dark:bg-darkTheme/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="./images/logoKrisHuynh.png" alt="logo" class="h-16 dark:hidden">
+      </a>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center gap-8 font-semibold">
-      <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
-      <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
-      <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
-    </ul>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 font-semibold">
+        <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
+        <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
+      </ul>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="block md:hidden focus:outline-none">
-      <svg class="w-7 h-7 text-gray-800 dark:text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" aria-label="Toggle mobile menu" class="block md:hidden focus:outline-none">
+        <svg class="w-7 h-7 text-gray-800 dark:text-white" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-darkTheme/95 border-t dark:border-gray-700">
-    <ul class="flex flex-col items-center py-4 space-y-4 font-semibold">
-      <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
-      <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
-      <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
-    </ul>
-  </div>
-</nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-darkTheme/95 border-t dark:border-gray-700">
+      <ul class="flex flex-col items-center py-4 space-y-4 font-semibold">
+        <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
+        <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- ✅ Script: Toggle & Scroll Effect -->
-<script>
-  // Toggle mobile menu
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navbar = document.getElementById('navbar');
+  <!-- Navbar Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-  // Change navbar background on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
-    } else {
-      navbar.classList.remove('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
-    }
-  });
-</script>
+    window.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
 
-
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
+      } else {
+        navbar.classList.remove('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
+      }
+    });
+  </script>
 
   <!-- About Section -->
-  <div class="w-full px-[12%] pt-40 pb-16">
+  <section class="w-full px-5 sm:px-12 lg:px-24 pt-40 pb-16">
     <h2 class="text-center text-5xl font-bold mb-10">About me</h2>
 
-    <!-- Wrap content to stay centered and even -->
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <!-- Text -->
-      <div class="space-y-4 text-left md:text-justify leading-relaxed">
+      <div class="space-y-6 text-left md:text-justify leading-relaxed">
         <p>
-          I hold an Associate’s Degree in Information Technology and began my career as a Data Analyst at Shinhan Vietnam Finance, where I gained two years of experience in analytics.
+          I hold an Associate’s Degree in Software Development and have over 3 years of experience in the tech industry, including 2 years specializing in analytics.
         </p>
         <p>
           Currently, I am a senior Computer Science student at New Jersey City University and work as an AI/ML Research Assistant, where I train and test models to make predictions.
@@ -92,105 +93,110 @@
           I have hands-on experience with Python, SQL, and data visualization tools, and I am passionate about leveraging technology to uncover insights, optimize processes, and deliver impactful, data-driven solutions.
         </p>
 
-        <!-- Info boxes -->
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-          <li class="border border-gray-300 rounded-xl p-4 dark:border-white/40">
+        <!-- Info Boxes -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <div class="border border-gray-300 rounded-xl p-6 dark:border-white/40">
             <h3 class="my-2 font-semibold text-gray-800 dark:text-white text-center">Skills</h3>
-            <p class="text-gray-600 text-sm dark:text-gray-200 md:text-justify">
-              <b>Languages:</b> Python (Pandas, Numpy, MatplotLib, Scikit-learn, TensorFlow, Keras)
-              <br><b>Databases:</b> PostgreSQL, MySQL
-              <br><b>BI & Visualization Tools:</b> Tableau, MS Excel (Pivot Table, VLOOKUP, XLOOKUP, Conditional Formatting)
-            </p>
-          </li>
-          <li class="border border-gray-300 rounded-xl p-6 dark:border-white/40">
+            <ul class="space-y-3 text-gray-700 dark:text-gray-300 text-base leading-relaxed mt-2">
+              <li><span class="font-semibold">Languages:</span> Python (Pandas, NumPy, Seaborn, Matplotlib, Scikit-learn, TensorFlow, Keras), HTML, CSS, JavaScript, React.js</li>
+              <li><span class="font-semibold">Databases:</span> PostgreSQL, MySQL</li>
+              <li><span class="font-semibold">BI & Visualization Tools:</span> Tableau, MS Excel</li>
+              <li><span class="font-semibold">Cloud:</span> AWS (EC2, S3, DynamoDB, Redshift)</li>
+            </ul>
+          </div>
+
+          <div class="border border-gray-300 rounded-xl p-6 dark:border-white/40">
             <h3 class="my-2 font-semibold text-gray-800 dark:text-white text-center">Education</h3>
-            <p class="text-gray-600 text-sm dark:text-gray-200">
-              <b>BS</b> in Computer Science<br><b>AS</b> in Software Development
+            <p class="text-gray-600 text-sm dark:text-gray-200 mt-2">
+              <b>BS</b> in Computer Science<br>
+              <b>AS</b> in Software Development
             </p>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Image (keeps aspect ratio, no distortion) -->
-  <!-- Image (hidden on mobile, visible on tablet/desktop) -->
+      <!-- Profile Image -->
       <div class="hidden sm:flex justify-center lg:justify-end">
-        <img
-          src="./images/profile.png"
-          alt="Kris Huynh"
-          class="w-72 sm:w-80 lg:w-96 aspect-[4/5] object-cover rounded-3xl shadow-md"
-        />
+        <img src="./images/profile.png" alt="Kris Huynh"
+             class="w-72 sm:w-80 lg:w-96 aspect-[4/5] object-cover rounded-3xl shadow-md"/>
       </div>
-
     </div>
 
-    <!-- Timeline -->
-   <section class="mt-16">
-  <h3 class="text-2xl font-bold mb-10 text-center">Timeline</h3>
+    <!-- Timeline Section -->
+    <section class="mt-16">
+      <h3 class="text-2xl font-bold mb-10 text-center">Timeline</h3>
+      <div class="max-w-6xl mx-auto relative border-l border-gray-300 dark:border-gray-600 pl-6">
+        
+        <!-- Timeline Item Template -->
+        <div class="timeline-item mb-10">
+          <div class="flex items-center mb-2">
+            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2024 – May 2026</p>
+          </div>
+          <h4 class="font-semibold text-lg">New Jersey City University</h4>
+          <p class="text-sm mb-4 text-gray-600 dark:text-gray-300">Bachelor's Degree in Computer Science</p>
 
-  <div class="max-w-6xl mx-auto relative border-l border-gray-300 dark:border-gray-600 pl-6">
+          <div class="ml-8 border-l border-gray-200 dark:border-gray-700 pl-5 mt-3">
+            <div class="flex items-center mb-1">
+              <div class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2025 – Present</p>
+            </div>
+            <h5 class="font-semibold">NASA Goddard - NJCU | Undergraduate AI/ML Research Assistant</h5>
+          </div>
 
-    <!-- Main node: New Jersey City University -->
-    <div class="mb-10">
-      <div class="flex items-center mb-2">
-        <div class="w-3 h-3 bg-yellow-500  rounded-full mr-3"></div>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2024 – May 2026</p>
-      </div>
-      <h4 class="font-semibold text-lg text-gray-900 dark:text-white">New Jersey City University</h4>
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Bachelor's Degree in Computer Science</p>
-       <!-- Sub-branch: NASA Research Assistant -->
-      <div class="ml-8 border-l border-gray-200 dark:border-gray-700 pl-5 mt-3">
-        <div class="flex items-center mb-1">
-          <div class="w-2 h-2 bg-yellow-400  rounded-full mr-2"></div>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Sep 2025 – Present</p>
+          <div class="ml-8 border-l border-gray-200 dark:border-gray-700 pl-5 mt-3">
+            <div class="flex items-center mb-1">
+              <div class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2025 – Aug 2025</p>
+            </div>
+            <h5 class="font-semibold">NJCU | Summer Research Intern</h5>
+          </div>
         </div>
-        <h5 class="font-semibold text-gray-800 dark:text-gray-200">NASA Goddard - NJCU | Undergraduate AI/ML Research Assistant</h5>
-      </div>
-      <!-- Sub-branch: Summer Research Intern -->
-      <div class="ml-8 border-l border-gray-200 dark:border-gray-700 pl-5 mt-3">
-        <div class="flex items-center mb-1">
-          <div class="w-2 h-2 bg-yellow-400  rounded-full mr-2"></div>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2025 – Aug 2025</p>
+
+        <!-- Repeat Timeline Items -->
+        <div class="timeline-item mb-10">
+          <div class="flex items-center mb-2">
+            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Mar 2023 – Jun 2024</p>
+          </div>
+          <h4 class="font-semibold text-lg">Shinhan Vietnam Finance | Data Analyst</h4>
         </div>
-        <h5 class="font-semibold text-gray-800 dark:text-gray-200">NJCU | Summer Research Intern</h5>
-      </div>
-    </div>
 
-    <!-- Shinhan Finance Vietnam -->
-    <div class="mb-10">
-      <div class="flex items-center mb-2">
-        <div class="w-3 h-3 bg-yellow-500  rounded-full mr-3"></div>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Mar 2023 – Jun 2024</p>
-      </div>
-      <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Shinhan Vietnam Finance | Data Analyst</h4>
-    </div>
+        <div class="timeline-item mb-10">
+          <div class="flex items-center mb-2">
+            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2022 – Aug 2022</p>
+          </div>
+          <h4 class="font-semibold text-lg">Shinhan Vietnam Finance | Data Analyst Intern</h4>
+        </div>
 
-    <div class="mb-10">
-      <div class="flex items-center mb-2">
-        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Jun 2022 – Aug 2022</p>
-      </div>
-      <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Shinhan Vietnam Finance | Data Analyst Intern</h4>
-    </div>
+        <div class="timeline-item mb-10">
+          <div class="flex items-center mb-2">
+            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">2020 – 2022</p>
+          </div>
+          <h4 class="font-semibold text-lg">Broward College Vietnam</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Associate’s Degree in Software Development</p>
+        </div>
 
-    <!-- Broward College -->
-    <div>
-      <div class="flex items-center mb-2">
-        <div class="w-3 h-3 bg-yellow-500  rounded-full mr-3"></div>
-        <p class="text-sm text-gray-500 dark:text-gray-400">2020 – 2022</p>
-      </div>
-      <h4 class="font-semibold text-lg text-gray-900 dark:text-white">Broward College Vietnam</h4>
-      <p class="text-gray-600 dark:text-gray-300 text-sm">Associate’s Degree in Software Development</p>
-    </div>
-  </div>
-</section>
+        <div class="timeline-item">
+          <div class="flex items-center mb-2">
+            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Dec 2018 – Jan 2020</p>
+          </div>
+          <h4 class="font-semibold text-lg">Gyldan Infotech Company Limited | Frontend Developer</h4>
+        </div>
 
-  </div>
+      </div>
+    </section>
+  </section>
 
   <!-- Footer -->
-  <footer class="text-center border-t border-gray-300 mx-[10%] py-10">
+  <footer class="text-center border-t border-gray-300 mx-10 sm:mx-24 py-10">
     <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-2 dark:hidden">
     <a href="mailto:krishuynh2222@gmail.com" class="block text-sm mb-2 hover:underline">krishuynh2222@gmail.com</a>
     <p>© 2025 by Kris Huynh</p>
   </footer>
+
 </body>
 </html>
