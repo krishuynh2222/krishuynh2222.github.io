@@ -1,227 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kris Huynh | WORK</title>
-  <link rel="icon" href="./images/dev-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kris Huynh | Work</title>
+  <link rel="icon" href="./images/Klogo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./tailwind.config.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: light dark; }
+    html { scroll-behavior: smooth; }
+    .font-mont{font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans"}
+    .line-clamp-3{-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+    .fade-up{animation:fadeUp .5s both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  </style>
 </head>
-
-<body class="font-Montserrat leading-8 dark:bg-darkTheme dark:text-white">
-  <!-- Background -->
-  <div class="fixed right-0 w-11/12 -z-10 translate-y-[-80%]">
-    <img src="./images/header-bg-color.png" alt="" class="w-full">
+<body class="font-mont leading-8 text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-950">
+  <!-- Background blobs -->
+  <div aria-hidden class="fixed inset-0 -z-10">
+    <div class="absolute right-[-10%] top-[-15%] h-[42rem] w-[42rem] rounded-full blur-3xl opacity-40 bg-gradient-to-br from-yellow-200 via-fuchsia-200 to-sky-200 dark:from-yellow-500/20 dark:via-fuchsia-500/20 dark:to-sky-500/20"></div>
   </div>
 
-<!-- ✅ Responsive Navigation -->
-<nav id="navbar" class="w-full fixed top-0 left-0 z-50 bg-white/70 backdrop-blur-md dark:bg-darkTheme/80 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-5 lg:px-10 flex justify-between items-center h-16">
-    
-    <!-- Logo -->
-     <a href="index.html" class="flex items-center">
-      <img src="./images/logoKrisHuynh.png" alt="logo" class="h-16 dark:hidden">
-    </a>
+  <!-- Navbar (pill / glass) -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10">
+      <div class="mt-3 flex h-16 items-center justify-between rounded-[2rem] px-3 bg-white/70 ring-1 ring-slate-900/5 backdrop-blur-xl shadow-lg relative dark:bg-slate-900/65 dark:ring-white/10">
+        <span class="pointer-events-none absolute inset-0 rounded-[2rem] [background:radial-gradient(1200px_600px_at_50%_-40%,rgba(255,255,255,0.08),transparent)]"></span>
+            <a href="index.html"
+            class="relative z-10 flex items-center gap-2 px-3 text-lg font-bold tracking-wide text-slate-800 dark:text-slate-100 hover:text-amber-600 transition">
+            <img src="./images/Klogo.png" alt="Logo" class="h-15 w-20">
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center gap-8 font-semibold">
-      <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
-      <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
-      <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
-    </ul>
-
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="block md:hidden focus:outline-none">
-      <svg class="w-7 h-7 text-gray-800 dark:text-white" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-darkTheme/95 border-t dark:border-gray-700">
-    <ul class="flex flex-col items-center py-4 space-y-4 font-semibold">
-      <li><a href="index.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Home</a></li>
-      <li><a href="about.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">About</a></li>
-      <li><a href="work.html" class="hover:text-yellow-500 dark:hover:text-yellow-300 transition-colors duration-300">Work</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ✅ Script: Toggle & Scroll Effect -->
-<script>
-  // Toggle mobile menu
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navbar = document.getElementById('navbar');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Change navbar background on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
-    } else {
-      navbar.classList.remove('shadow-lg', 'bg-white/90', 'dark:bg-darkTheme/90');
-    }
-  });
-</script>
-
-
-<!-- Portfolio Section -->
-<div class="w-full px-[12%] pt-40 pb-16">
-  <h2 class="text-center text-5xl font-bold mb-10">Portfolio</h2>
-  <p class="text-center text-gray-600 dark:text-gray-300 mt-3">
-    Selected projects showcasing my work in data analytics, visualization, and AI/ML
-  </p>
-
-  <!-- Grid Layout -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 justify-items-center items-stretch">
-    <!-- Project Card -->
-    <!-- Project 1 -->
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/ontime.png" alt="Predict On-time Shipment" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Best Model to Predict On-time Shipment with Machine Learning</h2>
-          <p class="text-sm text-gray-700">Tools: Python, scikit-learn</p>
-          <p class="text-sm text-gray-700">Models: Logistic Regression, SVM, K-Means Clustering</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Predicting on-time shipping using Logistic Regression, SVM and K-Means with PCA.
-            Compared model performance to identify the most accurate and generalizable approach (~80% test accuracy).
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/Predicting_on_time_shipping_with_Machine_Learning" target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
         </a>
+        <ul class="relative z-10 hidden md:flex items-center gap-8 font-semibold">
+          <li><a href="index.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">About</a></li>
+          <li><a href="work.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">Work</a></li>
+        </ul>
+        <button id="menu-btn" aria-label="Toggle mobile menu" class="relative z-10 md:hidden p-2 rounded-xl hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl bg-white/95 backdrop-blur ring-1 ring-slate-900/5 dark:bg-slate-900/95 dark:ring-white/10">
+        <ul class="flex flex-col items-stretch py-3 text-sm font-semibold">
+          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="index.html">Home</a></li>
+          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="about.html">About</a></li>
+          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="work.html">Work</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-        <!-- Project 2 --> 
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/fairprice.png" alt="FairPrice" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Fair Price Grocery Analysis</h2>
-          <p class="text-sm text-gray-700">Tools: SQL, Python, Tableau</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Tableau dashboard analyzing FairPrice grocery sales, customer ratings, and outlet performance.
-            Reveals insights on top categories, outlet tiers, and sales trends with actionable recommendations.
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/fairprice-grocery-analytics"
-           target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
-        </a>
+  <!-- Portfolio -->
+   <section id="about" class="pt-36 pb-16 px-6">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-24">
+      <header class="text-center mb-12 fade-up">
+        <p class="uppercase tracking-widest text-xs text-slate-500">Selected projects</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold mt-2">Portfolio</h1>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">Data analytics, visualization, and ML work I’m proud of.</p>
+      </header>
+
+      <!-- Filters -->
+      <div class="mt-6 flex flex-wrap justify-center gap-2">
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-yellow-500 text-white" data-filter="all">All</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60" data-filter="ml">ML</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60" data-filter="sql">SQL</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60" data-filter="dashboard">Dashboard</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60" data-filter="etl">ETL</button>
       </div>
-    </div>
-         <!-- Project 4 -->
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/datawarehouse.png" alt="Data Warehouse" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Data Warehouse Project</h2>
-          <p class="text-sm text-gray-700">Tools: Excel, SQL</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Built a PostgreSQL-based data warehouse with ETL processes, data modeling, and analytical queries for business reporting.
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/sql-data-warehouse-project"
-           target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
-        </a>
-      </div>
-    </div>
+
+      <!-- Cards grid -->
+      <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <!-- Card component helper classes -->
+        <!-- Project 1 -->
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="ml">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/ontime.png" alt="Predict On-time Shipment cover" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">Best Model to Predict On‑time Shipment</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">scikit‑learn</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">LogReg</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">SVM</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">K‑Means</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">Predicting on‑time shipping using Logistic Regression, SVM, and K‑Means (with PCA). Compared model performance to select the most generalizable approach (~80% test accuracy).</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/Predicting_on_time_shipping_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-600 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="dashboard sql">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/fairprice.png" alt="FairPrice Dashboard" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">FairPrice Grocery Analysis</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">SQL</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Tableau</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">Dashboard analyzing sales, ratings, and outlet performance; highlights top categories, outlet tiers, and trends with actionable recommendations.</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/fairprice-grocery-analytics" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="etl sql">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/datawarehouse.png" alt="Data Warehouse" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">Data Warehouse Project</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">PostgreSQL</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">ETL</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Modeling</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">PostgreSQL‑based warehouse with ETL processes, conformed models, and analytic queries for BI reporting.</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/sql-data-warehouse-project" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-600 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- Project 4 -->
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/staple.png" alt="Staples Sales Dashboard" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Staples Sales Dashboard Reporting</h2>
-          <p class="text-sm text-gray-700">Tools: Excel</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Interactive Excel dashboard analyzing Staples’ sales (2021–2024) using PivotTables, Charts, and VLOOKUP.
-            Highlights key revenue and performance insights across regions.
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/staples-sales-dashboard-reporting"
-           target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="dashboard">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/staple.png" alt="Staples Sales Dashboard" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">Staples Sales Dashboard Reporting</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Excel</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">PivotTable</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">Interactive Excel dashboard (2021–2024) with PivotTables, charts, and lookups. Surfaces revenue and performance insights across regions.</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/staples-sales-dashboard-reporting" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-600 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="ml">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/predicthousingprice.png" alt="Predict Housing Price" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">Predict Housing Price with ML</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Linear Reg.</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Decision Tree (pruned)</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">Price prediction using Linear Regression and pruned Decision Tree. Benchmarked models (~58% test accuracy) with diagnostics.</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/Predicting_Housing_Prices_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-600 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/70 backdrop-blur ring-1 ring-slate-900/5 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition dark:bg-slate-900/70 dark:ring-white/10" data-cat="dashboard sql">
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img loading="lazy" src="./images/loan.png" alt="Loan Performance" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
+          </div>
+          <div class="p-5 flex flex-col gap-3">
+            <h3 class="font-semibold text-lg">Loan Performance Analysis</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">SQL</span>
+              <span class="px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Tableau</span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">Loan disbursement performance exploration. SQL for cleaning/aggregation and Tableau for KPIs and slice‑and‑dice analysis.</p>
+            <div class="mt-1">
+              <a href="https://github.com/krishuynh2222/finance_loan_report" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-600 text-white hover:shadow">View on GitHub
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Show more -->
+      <div class="text-center">
+        <a href="https://github.com/krishuynh2222?tab=repositories" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-12 px-6 py-3 rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60 hover:ring-yellow-500/40 hover:-translate-y-0.5 transition">Show more
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-    </div>
-
-
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/predicthousingprice.png" alt="Predict housing price" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">
-            Predict Housing Price with Machine Learning 
-          </h2>
-          <p class="text-sm text-gray-700">Tools: Python, scikit-learn</p>
-          <p class="text-sm text-gray-700">Models: Linear Regression, Decision Tree with pruning</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Predicting housing prices using Linear Regression and Decision Tree with pruning.
-            Compared model performance to identify the most accurate and generalizable approach (~58% test accuracy).
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/Predicting_Housing_Prices_with_Machine_Learning"
-           target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
-        </a>
-      </div>
-    </div>
-
-
-    <!-- Project 5 -->
-    <div class="bg-white w-full max-w-sm rounded-lg shadow-md overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col">
-      <img src="./images/loan.png" alt="Loan Performance" class="w-full h-[200px] object-cover">
-      <div class="p-5 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="font-semibold text-lg mb-2 h-14 overflow-hidden">Loan Performance Analysis</h2>
-          <p class="text-sm text-gray-700">Tools: SQL, Tableau</p>
-          <p class="text-sm text-gray-700 mt-3">
-            Loan disbursement performance analysis using SQL for data cleaning and Tableau for visualization and business insights.
-          </p>
-        </div>
-        <a href="https://github.com/krishuynh2222/finance_loan_report"
-           target="_blank"
-           class="inline-flex items-center gap-1 mt-4 px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition self-start">
-          View on GitHub
-        </a>
-      </div>
-    </div>
-
-
-  </div>
-
-  <!-- Show more -->
-  <a href="https://github.com/krishuynh2222?tab=repositories"
-     class="w-max flex items-center justify-center border-[0.5px] rounded-full border-gray-700 py-3 px-10 gap-2 text-gray-700 my-20 mx-auto cursor-pointer hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-[#2a004a]">
-    Show more
-    <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
-    <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
-  </a>
-</div>
-
-
+    </section>
   <!-- Footer -->
-  <footer class="text-center border-t border-gray-300 mx-[10%] py-10">
-    <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-2 dark:hidden">
-    <a href="mailto:krishuynh2222@gmail.com" class="block text-sm mb-2 hover:underline">krishuynh2222@gmail.com</a>
-    <p>© 2025 by Kris Huynh</p>
+  <footer class="mt-16 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-10 text-center">
+      <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-3 dark:hidden" />
+      <a href="mailto:krishuynh2222@gmail.com" class="inline-flex items-center gap-2 text-sm hover:underline">krishuynh2222@gmail.com</a>
+      <p class="mt-2 text-xs text-slate-500">© 2025 by Kris Huynh</p>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    window.addEventListener('click', (e) => { if (!mobileMenu?.contains(e.target) && !menuBtn?.contains(e.target)) mobileMenu?.classList.add('hidden'); });
+    window.addEventListener('scroll', () => { navbar.classList.toggle('shadow-lg', window.scrollY > 6); });
+
+    // Simple filter logic
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('bg-yellow-600','text-white')); 
+      buttons.forEach(b => b.classList.add('bg-white/70','dark:bg-slate-900/60'));
+      btn.classList.add('bg-yellow-600','text-white');
+      btn.classList.remove('bg-white/70','dark:bg-slate-900/60');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        const cats = (c.dataset.cat||'').split(' ');
+        c.style.display = f==='all' || cats.includes(f) ? '' : 'none';
+      });
+    }));
+  </script>
 </body>
 </html>
