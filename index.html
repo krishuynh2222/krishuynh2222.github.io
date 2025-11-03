@@ -8,52 +8,54 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root { color-scheme: light dark; }
     html { scroll-behavior: smooth; }
     .font-mont { font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
-    .shine { background: linear-gradient(90deg, #fff0 0%, #fff5 50%, #fff0 100%);
+    .shine { background: linear-gradient(90deg, #fff0 0%, #ffffff22 50%, #fff0 100%);
              background-size: 200% 100%; animation: shine 2.2s linear infinite; }
     @keyframes shine { to { background-position: -200% 0; } }
   </style>
 </head>
-<body class="overflow-x-hidden font-mont leading-8 text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-950">
-  <!-- Soft gradient background blobs -->
+<body class="overflow-x-hidden font-mont leading-8 text-slate-100 bg-slate-950">
+
+  <!-- Soft gradient background blobs (tối) -->
   <div aria-hidden class="fixed inset-0 -z-10">
-    <div class="absolute right-[-10%] top-[-15%] h-[42rem] w-[42rem] rounded-full blur-3xl opacity-40 bg-gradient-to-br from-yellow-200 via-fuchsia-200 to-sky-200 dark:from-yellow-500/20 dark:via-fuchsia-500/20 dark:to-sky-500/20"></div>
-    <div class="absolute left-[-15%] bottom-[-20%] h-[40rem] w-[40rem] rounded-full blur-3xl opacity-25 bg-gradient-to-tr from-sky-200 via-emerald-200 to-yellow-200 dark:from-sky-500/15 dark:via-emerald-500/15 dark:to-yellow-500/15"></div>
+    <div class="absolute right-[-10%] top-[-15%] h-[42rem] w-[42rem] rounded-full blur-3xl opacity-30 bg-gradient-to-br from-yellow-500/20 via-fuchsia-500/20 to-sky-500/20"></div>
+    <div class="absolute left-[-15%] bottom-[-20%] h-[40rem] w-[40rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-sky-500/15 via-emerald-500/15 to-yellow-500/15"></div>
   </div>
 
-  <!-- Navbar (pill / glass) -->
+  <!-- Navbar (dark glass) -->
   <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 lg:px-10">
       <div class="mt-3 flex h-16 items-center justify-between rounded-[2rem] px-3
-                  bg-white/70 text-slate-900 ring-1 ring-slate-900/5 backdrop-blur-xl
-                  dark:bg-slate-900/65 dark:text-white dark:ring-white/10 shadow-lg relative">
+                  bg-slate-900/65 text-white ring-1 ring-white/10 backdrop-blur-xl shadow-lg relative">
         <span class="pointer-events-none absolute inset-0 rounded-[2rem]
                      [background:radial-gradient(1200px_600px_at_50%_-40%,rgba(255,255,255,0.08),transparent)]"></span>
+
         <!-- Logo -->
         <a href="index.html"
-            class="relative z-10 flex items-center gap-2 px-3 text-lg font-bold tracking-wide text-slate-800 dark:text-slate-100 hover:text-amber-600 transition">
-            <img src="./images/Klogo.png" alt="Logo" class="h-15 w-20">
-
+           class="relative z-10 flex items-center gap-2 px-3 text-lg font-bold tracking-wide text-slate-100 hover:text-amber-400 transition">
+          <img src="./images/Klogo.png" alt="Logo" class="h-15 w-20">
         </a>
+
         <!-- Desktop Menu -->
         <ul class="relative z-10 hidden md:flex items-center gap-8 font-semibold">
-          <li><a href="index.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">Home</a></li>
-          <li><a href="about.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">About</a></li>
-          <li><a href="work.html" class="hover:text-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/60 rounded-md px-1">Work</a></li>
+          <li><a href="index.html" class="hover:text-yellow-400 rounded-md px-1">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-400 rounded-md px-1">About</a></li>
+          <li><a href="work.html" class="hover:text-yellow-400 rounded-md px-1">Work</a></li>
         </ul>
+
         <!-- Mobile menu button -->
-        <button id="menu-btn" aria-label="Toggle mobile menu" class="relative z-10 md:hidden p-2 rounded-xl hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60">
+        <button id="menu-btn" aria-label="Toggle mobile menu" class="relative z-10 md:hidden p-2 rounded-xl hover:bg-white/10">
           <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl bg-white/95 text-slate-800 backdrop-blur ring-1 ring-slate-900/5 dark:bg-slate-900/95 dark:text-slate-100 dark:ring-white/10">
+
+      <!-- Mobile Menu (dark) -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl bg-slate-900/95 text-slate-100 backdrop-blur ring-1 ring-white/10">
         <ul class="flex flex-col items-stretch py-3 text-sm font-semibold">
-          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="index.html">Home</a></li>
-          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="about.html">About</a></li>
-          <li><a class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl" href="work.html">Work</a></li>
+          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="index.html">Home</a></li>
+          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="about.html">About</a></li>
+          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="work.html">Work</a></li>
         </ul>
       </div>
     </div>
@@ -62,46 +64,46 @@
   <!-- Hero -->
   <header class="relative w-full pt-36 pb-8">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <div class="mx-auto w-28 h-28 rounded-full ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden shadow-xl bg-white/70 backdrop-blur">
+      <div class="mx-auto w-28 h-28 rounded-full ring-1 ring-white/10 overflow-hidden shadow-xl bg-slate-900/60 backdrop-blur">
         <img src="./images/user_profile.png" alt="Kris Huynh profile photo" class="w-full h-full object-cover" />
       </div>
 
-      <h1 class="mt-6 text-4xl sm:text-6xl lg:text-[66px] leading-[1.1] font-extrabold">
+      <h1 class="mt-6 text-4xl sm:text-6xl lg:text-[66px] leading-[1.1] font-extrabold text-white">
         Hello! I'm
-        <span class="bg-clip-text text-transparent bg-gradient-to-r bg-yellow-500 ">Kris Huynh</span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">Kris Huynh</span>
       </h1>
-      <h2 class="mt-3 text-xl sm:text-2xl font-semibold text-slate-600 dark:text-slate-300">Aspiring Analytics Engineer</h2>
-      <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 dark:text-slate-300">
-        I transform raw data into reliable datasets and actionable insights using analytics and machine learning, enabling smarter, data‑driven decisions.
+      <h2 class="mt-3 text-xl sm:text-2xl font-semibold text-slate-300">Aspiring Analytics Engineer</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-slate-300">
+        I transform raw data into reliable datasets and actionable insights using analytics and machine learning, enabling smarter, data-driven decisions.
       </p>
 
       <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="./images/NganHuynh_Resume.pdf" download class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-yellow-500 text-white font-semibold shadow hover:shadow-md hover:-translate-y-[1px] active:translate-y-0 transition">
+        <a href="./images/NganHuynh_Resume.pdf" download class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-yellow-500 text-slate-950 font-semibold shadow hover:shadow-md hover:-translate-y-[1px] active:translate-y-0 transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Resume</span>
         </a>
-        <a href="work.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full ring-1 ring-slate-900/10 dark:ring-white/15 bg-white/70 dark:bg-slate-900/60 hover:ring-yellow-500/40 hover:-translate-y-[1px] transition">
+        <a href="work.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full ring-1 ring-white/10 bg-slate-900/60 hover:ring-yellow-400/40 hover:-translate-y-[1px] transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           <span>View Work</span>
         </a>
       </div>
 
-      <!-- Socials -->
+      <!-- Socials (dark cards) -->
       <ul class="mt-7 flex items-center justify-center gap-4 sm:gap-5">
-        <li><a aria-label="LinkedIn" href="https://www.linkedin.com/in/krishuynh2222/" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-500/40 transition"><img src="./images/linkedin.png" alt="LinkedIn" class="w-6 sm:w-7"/></a></li>
-        <li><a aria-label="Email" href="mailto:krishuynh2222@gmail.com" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-500/40 transition"><img src="./images/gmailogo.png" alt="Gmail" class="w-6 sm:w-7"/></a></li>
-        <li><a aria-label="GitHub" href="https://github.com/krishuynh2222" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-500/40 transition"><img src="./images/github.svg" alt="GitHub" class="w-6 sm:w-7"/></a></li>
-        <li><a aria-label="Tableau" href="https://public.tableau.com/app/profile/ngan.huynh2792/vizzes" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-slate-900/10 dark:ring-white/10 bg-white/70 dark:bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-500/40 transition"><img src="./images/Tableaulogo.png" alt="Tableau" class="w-6 sm:w-7"/></a></li>
+        <li><a aria-label="LinkedIn" href="https://www.linkedin.com/in/krishuynh2222/" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-white/10 bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-400/40 transition"><img src="./images/linkedin.png" alt="LinkedIn" class="w-6 sm:w-7"/></a></li>
+        <li><a aria-label="Email" href="mailto:krishuynh2222@gmail.com" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-white/10 bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-400/40 transition"><img src="./images/gmailogo.png" alt="Gmail" class="w-6 sm:w-7"/></a></li>
+        <li><a aria-label="GitHub" href="https://github.com/krishuynh2222" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-white/10 bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-400/40 transition"><img src="./images/github.svg" alt="GitHub" class="w-6 sm:w-7"/></a></li>
+        <li><a aria-label="Tableau" href="https://public.tableau.com/app/profile/ngan.huynh2792/vizzes" target="_blank" rel="noreferrer" class="grid place-items-center w-12 sm:w-14 aspect-square rounded-xl ring-1 ring-white/10 bg-slate-900/60 hover:-translate-y-0.5 hover:ring-yellow-400/40 transition"><img src="./images/Tableaulogo.png" alt="Tableau" class="w-6 sm:w-7"/></a></li>
       </ul>
     </div>
   </header>
 
   <!-- Footer -->
-  <footer class="mt-16 border-t border-slate-200 dark:border-slate-800">
+  <footer class="mt-16 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-6 py-10 text-center">
-      <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-3 dark:hidden" />
+      <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-3" />
       <a href="mailto:krishuynh2222@gmail.com" class="inline-flex items-center gap-2 text-sm hover:underline">krishuynh2222@gmail.com</a>
-      <p class="mt-2 text-xs text-slate-500">© 2025 by Kris Huynh</p>
+      <p class="mt-2 text-xs text-slate-400">© 2025 by Kris Huynh</p>
     </div>
   </footer>
 
