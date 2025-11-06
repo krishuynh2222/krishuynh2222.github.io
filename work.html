@@ -13,38 +13,44 @@
     .line-clamp-3{-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
     .fade-up{animation:fadeUp .5s both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    :root { --gold: rgb(255, 179, 46); }
+    .text-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .ring-gold { --tw-ring-color: rgba(255,179,46,.5); }
   </style>
 </head>
-<body class="font-mont leading-8 text-slate-100 bg-slate-950">
-  <!-- Background blobs (dark tone) -->
+<body class="font-mont leading-8 text-slate-800 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+  <!-- Background light blobs -->
   <div aria-hidden class="fixed inset-0 -z-10">
-    <div class="absolute right-[-10%] top-[-15%] h-[42rem] w-[42rem] rounded-full blur-3xl opacity-30 bg-gradient-to-br from-yellow-500/20 via-fuchsia-500/20 to-sky-500/20"></div>
+    <div class="absolute right-[-10%] top-[-10%] h-[44rem] w-[44rem] rounded-full blur-3xl opacity-20" style="background: radial-gradient(closest-side, rgba(255,179,46,.18), rgba(255,179,46,.06), transparent 70%);"></div>
   </div>
 
-  <!-- Navbar (dark glass) -->
+  <!-- Navbar (light) -->
   <nav id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 lg:px-10">
-      <div class="mt-3 flex h-16 items-center justify-between rounded-[2rem] px-3 bg-slate-900/65 text-white ring-1 ring-white/10 backdrop-blur-xl shadow-lg relative">
-        <span class="pointer-events-none absolute inset-0 rounded-[2rem] [background:radial-gradient(1200px_600px_at_50%_-40%,rgba(255,255,255,0.08),transparent)]"></span>
-        <a href="index.html"
-           class="relative z-10 flex items-center gap-2 px-3 text-lg font-bold tracking-wide text-slate-100 hover:text-yellow-400 transition">
-          <img src="./images/Klogo.png" alt="Logo" class="h-15 w-20">
+      <div class="mt-3 flex h-16 items-center justify-between rounded-[2rem] px-3 bg-white/90 text-slate-900 ring-1 ring-gray-200 backdrop-blur-xl shadow-lg relative">
+        <span class="pointer-events-none absolute inset-0 rounded-[2rem] [background:radial-gradient(1200px_600px_at_50%_-40%,rgba(0,0,0,0.06),transparent)]"></span>
+        <!-- Logo -->
+        <a href="index.html" class="relative z-10 flex items-center gap-2 px-3 text-lg font-bold tracking-wide hover:text-gold transition">
+          <img src="./images/kblacklogo.png" alt="Logo" class="h-12 w-20">
         </a>
+        <!-- Desktop Menu -->
         <ul class="relative z-10 hidden md:flex items-center gap-8 font-semibold">
-          <li><a href="index.html" class="hover:text-yellow-400 rounded-md px-1">Home</a></li>
-          <li><a href="about.html" class="hover:text-yellow-400 rounded-md px-1">About</a></li>
-          <li><a href="work.html" class="hover:text-yellow-400 rounded-md px-1">Work</a></li>
+          <li><a href="index.html" class="hover:text-gold rounded-md px-1">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold rounded-md px-1">About</a></li>
+          <li><a href="work.html" class="hover:text-gold rounded-md px-1">Work</a></li>
         </ul>
-        <button id="menu-btn" aria-label="Toggle mobile menu" class="relative z-10 md:hidden p-2 rounded-xl hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60">
+        <!-- Mobile menu button -->
+        <button id="menu-btn" aria-label="Toggle mobile menu" class="relative z-10 md:hidden p-2 rounded-xl hover:bg-gray-100">
           <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
-      <!-- Mobile Menu (dark) -->
-      <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl bg-slate-900/95 text-slate-100 backdrop-blur ring-1 ring-white/10">
+      <!-- Mobile Menu (light) -->
+      <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl bg-white/95 text-slate-800 backdrop-blur ring-1 ring-gray-200">
         <ul class="flex flex-col items-stretch py-3 text-sm font-semibold">
-          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="index.html">Home</a></li>
-          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="about.html">About</a></li>
-          <li><a class="block px-5 py-3 hover:bg-slate-800 rounded-xl" href="work.html">Work</a></li>
+          <li><a class="block px-5 py-3 hover:bg-gray-50 rounded-xl" href="index.html">Home</a></li>
+          <li><a class="block px-5 py-3 hover:bg-gray-50 rounded-xl" href="about.html">About</a></li>
+          <li><a class="block px-5 py-3 hover:bg-gray-50 rounded-xl" href="work.html">Work</a></li>
         </ul>
       </div>
     </div>
@@ -54,40 +60,39 @@
   <section id="about" class="pt-36 pb-16 px-6">
     <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-24">
       <header class="text-center mb-12 fade-up">
-        <p class="uppercase tracking-widest text-xs text-slate-400">Selected projects</p>
-        <h1 class="text-4xl sm:text-5xl font-extrabold mt-2">Portfolio</h1>
-        <p class="mt-3 text-slate-300">Data analytics, visualization, and ML work I’m proud of.</p>
+        <p class="uppercase tracking-widest text-xs text-slate-500">Selected projects</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold mt-2 text-slate-900">Portfolio</h1>
+        <p class="mt-3 text-slate-600">Data analytics, visualization, and ML work I’m proud of.</p>
       </header>
 
       <!-- Filters -->
       <div class="mt-6 flex flex-wrap justify-center gap-2">
-        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-white/10 bg-yellow-500 text-slate-950" data-filter="all">All</button>
-        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-white/10 bg-slate-900/60 text-slate-100" data-filter="ml">ML</button>
-        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-white/10 bg-slate-900/60 text-slate-100" data-filter="sql">SQL</button>
-        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-white/10 bg-slate-900/60 text-slate-100" data-filter="dashboard">Dashboard</button>
-        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-white/10 bg-slate-900/60 text-slate-100" data-filter="etl">ETL</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-gray-200 bg-gold text-white" data-filter="all">All</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-gray-200 bg-white text-slate-800" data-filter="ml">ML</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-gray-200 bg-white text-slate-800" data-filter="sql">SQL</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-gray-200 bg-white text-slate-800" data-filter="dashboard">Dashboard</button>
+        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full ring-1 ring-gray-200 bg-white text-slate-800" data-filter="etl">ETL</button>
       </div>
 
       <!-- Cards grid -->
       <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-        <!-- Card: template style (dark) -->
         <!-- Project 1 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="ml">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="ml">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/ontime.png" alt="Predict On-time Shipment cover" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">Best Model to Predict On-time Shipment</h3>
+            <h3 class="font-semibold text-lg text-slate-900">Best Model to Predict On-time Shipment</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Python</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">scikit-learn</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">LogReg</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">SVM</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">K-Means</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">scikit-learn</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">LogReg</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">SVM</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">K-Means</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">Predicting on-time shipping using Logistic Regression, SVM, and K-Means (with PCA). Compared model performance to select the most generalizable approach (~80% test accuracy).</p>
+            <p class="text-sm text-slate-700 line-clamp-3">Predicting on-time shipping using Logistic Regression, SVM, and K-Means (with PCA). Compared model performance to select the most generalizable approach (~80% test accuracy).</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/Predicting_on_time_shipping_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/Predicting_on_time_shipping_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -95,20 +100,20 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="dashboard sql">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="dashboard sql">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/fairprice.png" alt="FairPrice Dashboard" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">FairPrice Grocery Analysis</h3>
+            <h3 class="font-semibold text-lg text-slate-900">FairPrice Grocery Analysis</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">SQL</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Python</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Tableau</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">SQL</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Tableau</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">Dashboard analyzing sales, ratings, and outlet performance; highlights top categories, outlet tiers, and trends with actionable recommendations.</p>
+            <p class="text-sm text-slate-700 line-clamp-3">Dashboard analyzing sales, ratings, and outlet performance; highlights top categories, outlet tiers, and trends with actionable recommendations.</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/fairprice-grocery-analytics" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/fairprice-grocery-analytics" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -116,20 +121,20 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="etl sql">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="etl sql">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/datawarehouse.png" alt="Data Warehouse" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">Data Warehouse Project</h3>
+            <h3 class="font-semibold text-lg text-slate-900">Data Warehouse Project</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">PostgreSQL</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">ETL</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Modeling</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">PostgreSQL</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">ETL</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Modeling</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">PostgreSQL-based warehouse with ETL processes, conformed models, and analytic queries for BI reporting.</p>
+            <p class="text-sm text-slate-700 line-clamp-3">PostgreSQL-based warehouse with ETL processes, conformed models, and analytic queries for BI reporting.</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/sql-data-warehouse-project" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/sql-data-warehouse-project" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -137,19 +142,19 @@
         </article>
 
         <!-- Project 4 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="dashboard">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="dashboard">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/staple.png" alt="Staples Sales Dashboard" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">Staples Sales Dashboard Reporting</h3>
+            <h3 class="font-semibold text-lg text-slate-900">Staples Sales Dashboard Reporting</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Excel</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">PivotTable</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Excel</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">PivotTable</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">Interactive Excel dashboard (2021–2024) with PivotTables, charts, and lookups. Surfaces revenue and performance insights across regions.</p>
+            <p class="text-sm text-slate-700 line-clamp-3">Interactive Excel dashboard (2021–2024) with PivotTables, charts, and lookups. Surfaces revenue and performance insights across regions.</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/staples-sales-dashboard-reporting" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/staples-sales-dashboard-reporting" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -157,20 +162,20 @@
         </article>
 
         <!-- Project 5 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="ml">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="ml">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/predicthousingprice.png" alt="Predict Housing Price" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">Predict Housing Price with ML</h3>
+            <h3 class="font-semibold text-lg text-slate-900">Predict Housing Price with ML</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Python</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Linear Reg.</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Decision Tree (pruned)</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Python</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Linear Reg.</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Decision Tree (pruned)</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">Price prediction using Linear Regression and pruned Decision Tree. Benchmarked models (~58% test accuracy) with diagnostics.</p>
+            <p class="text-sm text-slate-700 line-clamp-3">Price prediction using Linear Regression and pruned Decision Tree. Benchmarked models (~58% test accuracy) with diagnostics.</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/Predicting_Housing_Prices_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/Predicting_Housing_Prices_with_Machine_Learning" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -178,19 +183,19 @@
         </article>
 
         <!-- Project 6 -->
-        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur ring-1 ring-white/10 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition" data-cat="dashboard sql">
+        <article class="project group flex flex-col rounded-2xl overflow-hidden bg-white/90 backdrop-blur ring-1 ring-gray-200 hover:ring-[color:var(--gold)]/45 hover:-translate-y-0.5 transition" data-cat="dashboard sql">
           <div class="relative aspect-[16/10] overflow-hidden">
             <img loading="lazy" src="./images/loan.png" alt="Loan Performance" class="h-full w-full object-cover group-hover:scale-[1.03] transition" />
           </div>
           <div class="p-5 flex flex-col gap-3">
-            <h3 class="font-semibold text-lg">Loan Performance Analysis</h3>
+            <h3 class="font-semibold text-lg text-slate-900">Loan Performance Analysis</h3>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">SQL</span>
-              <span class="px-2 py-1 rounded-full bg-slate-800 text-slate-200">Tableau</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">SQL</span>
+              <span class="px-2 py-1 rounded-full bg-gray-100 text-slate-800">Tableau</span>
             </div>
-            <p class="text-sm text-slate-300 line-clamp-3">Loan disbursement performance exploration. SQL for cleaning/aggregation and Tableau for KPIs and slice-and-dice analysis.</p>
+            <p class="text-sm text-slate-700 line-clamp-3">Loan disbursement performance exploration. SQL for cleaning/aggregation and Tableau for KPIs and slice-and-dice analysis.</p>
             <div class="mt-1">
-              <a href="https://github.com/krishuynh2222/finance_loan_report" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-yellow-500 text-slate-950 hover:shadow">View on GitHub
+              <a href="https://github.com/krishuynh2222/finance_loan_report" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-md bg-gold text-white hover:shadow">View on GitHub
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
@@ -200,7 +205,7 @@
 
       <!-- Show more -->
       <div class="text-center">
-        <a href="https://github.com/krishuynh2222?tab=repositories" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-12 px-6 py-3 rounded-full ring-1 ring-white/10 bg-slate-900/60 hover:ring-yellow-400/40 hover:-translate-y-0.5 transition">Show more
+        <a href="https://github.com/krishuynh2222?tab=repositories" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-12 px-6 py-3 rounded-full ring-1 bg-white/90 hover:-translate-y-0.5 transition ring-gold">Show more
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -208,11 +213,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="mt-16 border-t border-slate-800">
+  <footer class="mt-16 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-6 py-10 text-center">
-      <img src="./images/logoKrisHuynh.png" alt="logo" class="w-36 mx-auto mb-3" />
-      <a href="mailto:krishuynh2222@gmail.com" class="inline-flex items-center gap-2 text-sm hover:underline">krishuynh2222@gmail.com</a>
-      <p class="mt-2 text-xs text-slate-400">© 2025 by Kris Huynh</p>
+      <img src="./images/kblacklogo.png" alt="logo" class="w-12 mx-auto mb-3" />
+      <a href="mailto:krishuynh2222@gmail.com" class="inline-flex items-center gap-2 text-sm hover:underline text-gold">krishuynh2222@gmail.com</a>
+      <p class="mt-2 text-xs text-slate-500">© 2025 by Kris Huynh</p>
     </div>
   </footer>
 
@@ -223,19 +228,20 @@
     const navbar = document.getElementById('navbar');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     window.addEventListener('click', (e) => { if (!mobileMenu?.contains(e.target) && !menuBtn?.contains(e.target)) mobileMenu?.classList.add('hidden'); });
-    window.addEventListener('scroll', () => { navbar.classList.toggle('shadow-lg', window.scrollY > 6); });
 
-    // Simple filter logic (dark-only classes)
+    // Filter logic for light theme
     const buttons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.project');
-    buttons.forEach(btn => btn.addEventListener('click', () => {
-      buttons.forEach(b => {
-        b.classList.remove('bg-yellow-500','text-slate-950');
-        b.classList.add('bg-slate-900/60','text-slate-100');
+    function setActive(btn){
+      buttons.forEach(b=>{
+        b.classList.remove('bg-gold','text-white');
+        b.classList.add('bg-white','text-slate-800');
       });
-      btn.classList.add('bg-yellow-500','text-slate-950');
-      btn.classList.remove('bg-slate-900/60','text-slate-100');
-
+      btn.classList.add('bg-gold','text-white');
+      btn.classList.remove('bg-white','text-slate-800');
+    }
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      setActive(btn);
       const f = btn.dataset.filter;
       cards.forEach(c => {
         const cats = (c.dataset.cat || '').split(' ');
